@@ -13,7 +13,7 @@ do
     
     if (height <= 0)
     {
-        Console.WriteLine("\nAltura deve ser positiva, tente novamente.\n");
+        Console.WriteLine("\nAltura deve ser maior que 0, tente novamente.\n");
     }
 } while (height <= 0);
 
@@ -24,7 +24,7 @@ do
     
     if (weight <= 0)
     {
-        Console.WriteLine("\nPesp deve ser positivo, tente novamente.\n");
+        Console.WriteLine("\nPeso deve ser maior que 0, tente novamente.\n");
     }
  } while (weight <= 0);
 
@@ -50,6 +50,8 @@ do
     De 30 a 34,9 	Obesidade grau I
     De 35 a 39.9 	Obesidade grau II
     Igual ou maior que 40 	Obesidade grau III
+
+    fonte: https://www.tuasaude.com/imc/
  
  */
 

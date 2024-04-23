@@ -1,8 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-float weight = 0, height = 0;
+﻿float weight = 0, height = 0;
 double imc = 0;
-string sex = string.Empty, result = string.Empty;
+string result = "";
+char sex;
 
 Console.WriteLine("Calculo de IMC.");
 
@@ -31,14 +30,14 @@ do
 do
 {
     Console.Write("Qual seu sexo biológico? ('H' para homem / 'M' para mulher): ");
-    sex = Console.ReadLine();
+    sex = char.Parse(Console.ReadLine());
 
-    if (!sex.Equals("H") && !sex.Equals("M"))
+    if (sex != 'H' && sex != 'M')
     {
         Console.WriteLine("\nOpção inválida, tente novamente.\n");
     }
 
-} while (!sex.Equals("H") && !sex.Equals("M"));
+} while (sex != 'H' && sex != 'M');
 
 
 /*
@@ -56,30 +55,53 @@ do
  */
 
 imc = weight / Math.Pow(height / 100, 2);
-
-if (imc < 18.5)
+if (sex == 'H')
 {
-    result = "Abaixo do peso.";
-}
-else if (imc < 25)
-{
-    result = "No peso ideal";
-}
-else if (imc < 30)
-{
-    result = "Em sobrepeso";
-}
-else if (imc < 35)
-{
-    result = "Obesidade grau I";
-}
-else if (imc < 40)
-{
-    result = "Obesidade grau II";
+    switch (imc)
+    {
+        case < 18.5:
+            result = "Abaixo do peso.";
+            break;
+        case < 25:
+            result = "No peso ideal";
+            break;
+        case < 30:
+            result = "Em sobrepeso";
+            break;
+        case < 35:
+            result = "Obesidade grau I";
+            break;
+        case < 40:
+            result = "Obesidade grau II";
+            break;
+        default:
+            result = "Obesidade grau III";
+            break;
+    }
 }
 else
 {
-    result = "Obesidade grau III";
+    switch (imc)
+    {
+        case < 18.5:
+            result = "Abaixo do peso.";
+            break;
+        case < 25:
+            result = "No peso ideal";
+            break;
+        case < 30:
+            result = "Em sobrepeso";
+            break;
+        case < 35:
+            result = "Obesidade grau I";
+            break;
+        case < 40:
+            result = "Obesidade grau II";
+            break;
+        default:
+            result = "Obesidade grau III";
+            break;
+    }
 }
 
 Console.WriteLine($"\n-> O cálculo do IMC é {imc:0.00} e aponta: {result}\n"); 
